@@ -8,7 +8,7 @@ export default function HomePage() {
       padding="50px 24px 0"
       textAlign="center"
     >
-      Welcome to page contactsApp
+      Welcome to page phoneBookApp;)
     </Typography>
   );
 }
