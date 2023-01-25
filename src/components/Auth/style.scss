@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  .form {
+    min-width: 30%;
+    .incitingText {
+      color: #1900d5;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+}

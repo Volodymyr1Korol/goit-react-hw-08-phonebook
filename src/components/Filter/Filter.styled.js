@@ -1,33 +1,22 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
-const SearchContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* max-width: 400px; */
-  margin: 0;
-  margin-bottom: 40px;
+export const FilterBox = styled.div`
+  padding: 20px;
+`;
 
-  text-align: start;
-`;
-const LabelSearch = styled.p`
-  font-size: 16px;
-  margin-bottom: 5px;
-  padding: 5px;
-`;
-const InputSearch = styled.input`
-  border: none;
+export const FilterInput = styled.input`
+  width: 300px;
+  height: 40px;
+  margin-bottom: 10px;
   outline: none;
-  padding: 10px;
-  min-width: 200px;
-
-  color: ${props => props.theme.text};
-  background-color: ${props => props.theme.input};
-
-  border: 1px solid transparent;
+  border: solid 2px teal;
   border-radius: 5px;
-  outline: none;
-  box-shadow: 0px 2px 5px rgb(100, 100, 100);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border: none;
+    border: solid 2px red;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  }
 `;
-
-export { LabelSearch, InputSearch, SearchContainer };

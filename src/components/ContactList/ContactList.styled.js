@@ -1,128 +1,36 @@
-import styled, { keyframes } from 'styled-components';
-
-const List = styled.ol`
-  font-size: 18px;
-  text-align: start;
+import styled from '@emotion/styled';
+export const ContactListContact = styled.ul`
+  padding: 20px;
 `;
-
-const ListItem = styled.li`
-  padding: 2px 5px;
+export const ContactItem = styled.li`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 320px;
-  margin-bottom: 5px;
+  justify-content: space-between;
+  max-width: 640px;
+  margin-bottom: 15px;
+  padding: 10px;
 
-  border: 1px solid transparent;
-  border-radius: 5px;
-  outline: none;
-  box-shadow: 0px 2px 5px rgb(100, 100, 100);
-
-  &:last-child {
+  border-bottom: solid 2px black;
+  &:last-of-type {
     margin-bottom: 0;
-  }
-  @media screen and (min-width: 768px) {
-    max-width: 600px;
+    border-bottom: none;
   }
 `;
-
-const Number = styled.span`
-  font-style: italic;
-  margin-left: 5px;
-  font-size: 10px;
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    margin-left: 10px;
-  }
+export const ContactText = styled.p`
+  font-size: 20px;
 `;
-const animCall = keyframes`
-0% {transform: rotate(0deg)};
-50% {transform: rotate(-30deg)};
-100% {transform: rotate(0deg)};
-`;
-const animDelete = keyframes`
-0% {transform: scale(1)};
-50% {transform: scale(1.1)};
-100% {transform: scale(1)};
-`;
-const CallTo = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  width: 20px;
-  height: 20px;
+export const ContactButtom = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  background-color: teal;
   border: none;
-  cursor: pointer;
-  color: ${props => props.theme.text};
-  @media screen and (min-width: 768px) {
-    width: 30px;
-    height: 30px;
-  }
-  & > svg {
-    transition: all 0.3s;
-  }
-  &:hover > svg {
-    fill: green;
-    animation-name: ${animCall};
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+  margin: 0px, auto, 0px, auto;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: red;
   }
 `;
-const MailTo = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 5px;
-  width: 20px;
-  height: 20px;
-  border: none;
-  cursor: pointer;
-  color: ${props => props.theme.text};
-  @media screen and (min-width: 768px) {
-    width: 30px;
-    height: 30px;
-  }
-  & > svg {
-    transition: all 0.3s;
-  }
-  &:hover > svg {
-    fill: orange;
-    animation-name: ${animDelete};
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  }
-`;
-
-const DeleteButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 5px;
-  background-color: transparent;
-  border: none;
-  color: ${props => props.theme.text};
-  cursor: pointer;
-  & > svg {
-    transition: all 0.3s;
-  }
-  &:hover:not(:disabled) > svg,
-  &:focus > svg,
-  &:active > svg {
-    color: #9c1111;
-    animation-name: ${animDelete};
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  }
-`;
-const ItemInfo = styled.p`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 10px;
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-  }
-`;
-
-export { List, ListItem, Number, DeleteButton, ItemInfo, CallTo, MailTo };
